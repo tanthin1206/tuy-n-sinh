@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Câu Lạc Bộ Toán - Tin Học - Công Nghệ Nam Khánh Hòa</title>
+    <title>Trung Tâm DTH STEM - Khơi Nguồn Sáng Tạo, Vững Bước Tương Lai</title>
+    <meta name="description" content="DTH STEM - Trung tâm đào tạo STEM, Tin học, AI, Robot và Toán THCS hàng đầu Nam Khánh Hòa. Khơi nguồn sáng tạo, vững bước tương lai cho trẻ từ 4 tuổi.">
+    <meta name="keywords" content="STEM, Robot, Tin học, AI, Toán THCS, Nam Khánh Hòa, DTH STEM">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-gear"><i class="fas fa-cog fa-spin"></i></div>
+            <p>DTH STEM</p>
+        </div>
+    </div>
+
     <!-- Header / Navbar -->
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                CLB Nam Khánh Hòa
-            </div>
-            <nav class="nav-menu">
+            <div class="logo">DTH STEM</div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
                 <a href="#home">Trang chủ</a>
                 <a href="#programs">Khóa học</a>
+                <a href="#roadmap">Lộ trình</a>
                 <a href="#schedule">Lịch học</a>
+                <a href="#testimonials">Cảm nhận</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact" class="btn-primary">Liên hệ ngay</a>
             </nav>
         </div>
@@ -27,13 +42,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container hero-container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll">
                 <div class="badge">Khai Giảng Từ 20/5</div>
                 <h1 class="hero-title">Chiêu Sinh 2026<br><span>CÁC KHÓA HỌC CÔNG NGHỆ</span></h1>
                 <p class="hero-slogan">"DTH STEM - KHƠI NGUỒN SÁNG TẠO - VỮNG BƯỚC TƯƠNG LAI"</p>
                 <a href="#programs" class="btn-large">Khám Phá Các Khóa Học</a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image animate-on-scroll">
                 <img src="images/hero.png" alt="Học sinh STEM">
             </div>
         </div>
@@ -42,13 +57,10 @@
     <!-- Programs Section -->
     <section id="programs" class="programs-section">
         <div class="container">
-            <h2 class="section-title">CÁC KHÓA HỌC NỔI BẬT</h2>
+            <h2 class="section-title animate-on-scroll">CÁC KHÓA HỌC NỔI BẬT</h2>
             <div class="programs-grid">
-                <!-- Course 1 -->
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="images/tinhoc.png" alt="Tin Học Cơ Bản">
-                    </div>
+                <div class="program-card animate-on-scroll">
+                    <div class="card-image"><img src="images/tinhoc.png" alt="Tin Học Cơ Bản"></div>
                     <div class="card-content">
                         <span class="age-tag">Độ tuổi: 5+</span>
                         <h3 class="card-title">Tin Học Cơ Bản</h3>
@@ -56,11 +68,8 @@
                         <a href="#schedule" class="btn-card">Xem Lịch Học</a>
                     </div>
                 </div>
-                <!-- Course 2 -->
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="images/ai.png" alt="Ứng Dụng AI">
-                    </div>
+                <div class="program-card animate-on-scroll">
+                    <div class="card-image"><img src="images/ai.png" alt="Ứng Dụng AI"></div>
                     <div class="card-content">
                         <span class="age-tag">Độ tuổi: 7+</span>
                         <h3 class="card-title">Ứng Dụng AI</h3>
@@ -68,11 +77,8 @@
                         <a href="#schedule" class="btn-card">Xem Lịch Học</a>
                     </div>
                 </div>
-                <!-- Course 3 -->
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="images/stem.png" alt="Giáo Dục STEM">
-                    </div>
+                <div class="program-card animate-on-scroll">
+                    <div class="card-image"><img src="images/stem.png" alt="Giáo Dục STEM"></div>
                     <div class="card-content">
                         <span class="age-tag">Độ tuổi: 6+</span>
                         <h3 class="card-title">Giáo Dục STEM</h3>
@@ -80,11 +86,8 @@
                         <a href="#schedule" class="btn-card">Xem Lịch Học</a>
                     </div>
                 </div>
-                <!-- Course 4 -->
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="images/toan.png" alt="Toán THCS">
-                    </div>
+                <div class="program-card animate-on-scroll">
+                    <div class="card-image"><img src="images/toan.png" alt="Toán THCS"></div>
                     <div class="card-content">
                         <span class="age-tag">Lớp: 6-9</span>
                         <h3 class="card-title">Toán THCS</h3>
@@ -96,11 +99,107 @@
         </div>
     </section>
 
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">LỘ TRÌNH HỌC</h2>
+            <div class="roadmap-container">
+                <div class="roadmap-item grouped-item animate-on-scroll">
+                    <div class="roadmap-left">
+                        <div class="roadmap-badge badge-yellow">
+                            <div class="badge-icon"><i class="fas fa-cog"></i></div>
+                            <div class="badge-text">STEM 1</div>
+                        </div>
+                        <div class="roadmap-arrow"><i class="fas fa-chevron-down"></i></div>
+                        <div class="roadmap-badge badge-orange">
+                            <div class="badge-icon"><i class="fas fa-cog"></i></div>
+                            <div class="badge-text">STEM 2</div>
+                        </div>
+                        <div class="roadmap-arrow"><i class="fas fa-chevron-down"></i></div>
+                        <div class="roadmap-badge badge-teal">
+                            <div class="badge-icon"><i class="fas fa-cog"></i></div>
+                            <div class="badge-text">STEM 3</div>
+                        </div>
+                    </div>
+                    <div class="roadmap-right grouped-right">
+                        <ul>
+                            <li>- Robot phát triển tư duy</li>
+                            <li>"Kiến thức khoa học thực tế"</li>
+                            <li><strong>Độ tuổi: 4-6</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll">
+                    <div class="roadmap-left">
+                        <div class="roadmap-badge badge-blue">
+                            <div class="badge-icon"><i class="fas fa-robot"></i></div>
+                            <div class="badge-text">STEM<br>STARTER KIT</div>
+                        </div>
+                    </div>
+                    <div class="roadmap-right">
+                        <ul>
+                            <li>Lập trình, lắp ráp</li>
+                            <li>"Sáng tạo dự án thực tế"</li>
+                            <li><strong>Độ tuổi: 7-9</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll">
+                    <div class="roadmap-left">
+                        <div class="roadmap-badge badge-blue-2">
+                            <div class="badge-icon"></div>
+                            <div class="badge-text">ROBOT ROVER</div>
+                        </div>
+                    </div>
+                    <div class="roadmap-right">
+                        <ul>
+                            <li>Điều khiển, cảm biến, Robot</li>
+                            <li>Tự hành và thi đấu</li>
+                            <li><strong>Độ tuổi: 10-11</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll">
+                    <div class="roadmap-left">
+                        <div class="roadmap-badge badge-blue-3">
+                            <div class="badge-icon"></div>
+                            <div class="badge-text">ROBOT<br>NÂNG CAO ORC K2</div>
+                        </div>
+                    </div>
+                    <div class="roadmap-right">
+                        <ul>
+                            <li>Lắp ráp lập trình thiết kế</li>
+                            <li>Cảm biến dò đường Robot</li>
+                            <li>Di chuyển tự động</li>
+                            <li>Thi đấu</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll">
+                    <div class="roadmap-left">
+                        <div class="roadmap-badge badge-blue-4">
+                            <div class="badge-icon"></div>
+                            <div class="badge-text">LẬP TRÌNH<br>DỰ ÁN THỰC TẾ</div>
+                        </div>
+                    </div>
+                    <div class="roadmap-right">
+                        <ul>
+                            <li>Cơ khí, Arduino, AI, IoT,</li>
+                            <li>thực hành dự án khoa học thực tế</li>
+                            <li>Công nghệ tương lai</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Schedule Section -->
     <section id="schedule" class="schedule-section">
         <div class="container">
-            <h2 class="section-title">LỊCH HỌC DỰ KIẾN</h2>
-            <div class="schedule-wrapper">
+            <h2 class="section-title animate-on-scroll">LỊCH HỌC DỰ KIẾN</h2>
+            <!-- Desktop table -->
+            <div class="schedule-wrapper animate-on-scroll">
                 <table class="schedule-table">
                     <thead>
                         <tr>
@@ -111,9 +210,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="day-group">
-                            <td colspan="4">Thứ 7 - Chủ Nhật Hàng Tuần</td>
-                        </tr>
+                        <tr class="day-group"><td colspan="4">Thứ 7 - Chủ Nhật Hàng Tuần</td></tr>
                         <tr>
                             <td class="course-col">Tin Học Cơ Bản</td>
                             <td>Sáng</td>
@@ -132,9 +229,7 @@
                             <td>6h - 7h30</td>
                             <td>7h30 - 9h</td>
                         </tr>
-                        <tr class="day-group">
-                            <td colspan="4">Thứ 2 - Thứ 7 Hàng Tuần</td>
-                        </tr>
+                        <tr class="day-group"><td colspan="4">Thứ 2 - Thứ 7 Hàng Tuần</td></tr>
                         <tr>
                             <td class="course-col">TOÁN THCS 6-7-8-9</td>
                             <td>Tối</td>
@@ -143,13 +238,119 @@
                     </tbody>
                 </table>
             </div>
+            <!-- Mobile cards -->
+            <div class="schedule-cards">
+                <div class="schedule-card-group animate-on-scroll">
+                    <div class="schedule-group-title">Thứ 7 - Chủ Nhật Hàng Tuần</div>
+                    <div class="schedule-card">
+                        <h4>Tin Học Cơ Bản</h4>
+                        <p><i class="fas fa-sun"></i> Sáng</p>
+                        <p><i class="fas fa-clock"></i> 7h - 8h30 | 8h30 - 10h | 10h - 11h30</p>
+                    </div>
+                    <div class="schedule-card">
+                        <h4>Ứng Dụng Công Nghệ AI</h4>
+                        <p><i class="fas fa-cloud-sun"></i> Chiều</p>
+                        <p><i class="fas fa-clock"></i> 1h - 2h30 | 2h30 - 4h | 4h - 5h30</p>
+                    </div>
+                    <div class="schedule-card">
+                        <h4>Giáo Dục STEM</h4>
+                        <p><i class="fas fa-moon"></i> Tối</p>
+                        <p><i class="fas fa-clock"></i> 6h - 7h30 | 7h30 - 9h</p>
+                    </div>
+                </div>
+                <div class="schedule-card-group animate-on-scroll">
+                    <div class="schedule-group-title">Thứ 2 - Thứ 7 Hàng Tuần</div>
+                    <div class="schedule-card">
+                        <h4>TOÁN THCS 6-7-8-9</h4>
+                        <p><i class="fas fa-moon"></i> Tối</p>
+                        <p><i class="fas fa-clock"></i> 5h30 - 7h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">CẢM NHẬN PHỤ HUYNH</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Con tôi rất hào hứng mỗi khi đến lớp STEM. Bé không chỉ học được kiến thức mà còn phát triển khả năng tư duy sáng tạo rất tốt!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div><strong>Chị Thanh Hương</strong><br><small>Phụ huynh bé Minh Khôi (6 tuổi)</small></div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Sau 3 tháng học Toán tại trung tâm, con tiến bộ rõ rệt. Thầy cô rất tận tâm và phương pháp dạy dễ hiểu. Rất hài lòng!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div><strong>Anh Văn Đức</strong><br><small>Phụ huynh bé Gia Hân (lớp 7)</small></div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Bé nhà mình mê Robot lắm! Từ khi học ở DTH STEM, con tự tin hơn rất nhiều và đã đạt giải trong cuộc thi Robot cấp tỉnh."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div><strong>Chị Mai Lan</strong><br><small>Phụ huynh bé Quốc Bảo (10 tuổi)</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">CÂU HỎI THƯỜNG GẶP</h2>
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Học phí các khóa học là bao nhiêu?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer"><p>Học phí tùy theo từng khóa học và độ tuổi. Vui lòng liên hệ trung tâm để được tư vấn chi tiết và nhận ưu đãi khai giảng.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Con tôi có được học thử trước khi đăng ký không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer"><p>Có! DTH STEM luôn có buổi học thử miễn phí để phụ huynh và các bé trải nghiệm trước khi quyết định đăng ký.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Con cần chuẩn bị gì khi đến lớp?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer"><p>Trung tâm cung cấp đầy đủ thiết bị và giáo cụ. Các bé chỉ cần mang theo sự hào hứng và tinh thần học tập!</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Mỗi lớp có bao nhiêu học sinh?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer"><p>Lớp học được giới hạn tối đa 10-12 học sinh để đảm bảo chất lượng giảng dạy và sự quan tâm đến từng bé.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Trung tâm có chương trình ưu đãi nào không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer"><p>DTH STEM có ưu đãi giảm 10% khi đăng ký 2 khóa trở lên, và giảm 15% cho anh chị em ruột cùng học. Liên hệ ngay để biết thêm!</p></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container contact-container">
-            <div class="contact-info">
+            <div class="contact-info animate-on-scroll">
                 <h2>Thông Tin Liên Hệ</h2>
                 <p>Hãy để lại thông tin, chúng tôi sẽ liên hệ tư vấn khóa học phù hợp nhất cho con bạn trong thời gian sớm nhất.</p>
                 <div class="info-item">
@@ -161,7 +362,7 @@
                     <span>Lô B5 Ngô Gia Tự (nối dài), Đài Sơn, P. Phan Rang, T. Khánh Hòa</span>
                 </div>
             </div>
-            <div class="contact-form">
+            <div class="contact-form animate-on-scroll">
                 <form>
                     <div class="form-group">
                         <input type="text" placeholder="Họ và tên học sinh / phụ huynh" required>
@@ -187,8 +388,42 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Câu Lạc Bộ Toán - Tin Học - Công Nghệ Nam Khánh Hòa.</p>
+            <p>&copy; 2026 Trung Tâm DTH STEM.</p>
         </div>
     </footer>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loading-screen');
+            loader.classList.add('fade-out');
+            setTimeout(() => loader.style.display = 'none', 600);
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        // Close menu on link click
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
