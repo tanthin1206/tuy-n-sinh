@@ -764,6 +764,7 @@
         const cards = document.querySelectorAll('.program-card');
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
+                if (window.innerWidth <= 768) return; // Không kích hoạt hiệu ứng 3D trên điện thoại/máy tính bảng
                 const cardRect = card.getBoundingClientRect();
                 const cardWidth = cardRect.width;
                 const cardHeight = cardRect.height;

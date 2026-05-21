@@ -1435,6 +1435,11 @@ html {
     .programs-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Hide Zalo tooltip on mobile to avoid overlapping critical elements */
+    .zalo-tooltip {
+        display: none !important;
+    }
 }
 
 /* ===== ZALO FLOATING BUTTON ===== */
