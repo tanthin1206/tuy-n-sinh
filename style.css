@@ -1042,6 +1042,30 @@ html {
 .ch-2 { background: linear-gradient(135deg, var(--secondary), #d87c0d); }
 .ch-3 { background: linear-gradient(135deg, #6c5ce7, #8e44ad); }
 
+.ch-blue { background: linear-gradient(135deg, #00AEEF, #0082C8); }
+.ch-red { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.ch-green { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+
+.music-list li::before {
+    content: '\f001' !important;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    font-size: 0.85rem !important;
+    top: 2px !important;
+}
+
+.roadmap-col-item:nth-child(1) .music-list li::before {
+    color: #0082C8 !important;
+}
+
+.roadmap-col-item:nth-child(2) .music-list li::before {
+    color: #e74c3c !important;
+}
+
+.roadmap-col-item:nth-child(3) .music-list li::before {
+    color: #27ae60 !important;
+}
+
 .roadmap-col-item ul {
     padding: 25px;
 }
