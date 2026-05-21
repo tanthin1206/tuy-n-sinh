@@ -7,6 +7,28 @@
     --text-light: #666666;
     --bg-light: #F7F9FC;
     --white: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --border-card: #eef2f5;
+    --shadow-card: rgba(0,0,0,0.05);
+    --bg-body: #FFFFFF;
+    --nav-bg: rgba(255,255,255,0.95);
+    --input-bg: #f8fbff;
+    --input-border: #eef2f5;
+}
+
+[data-theme="dark"] {
+    --text-dark: #f1f5f9;
+    --text-light: #cbd5e1;
+    --bg-light: #0f172a;
+    --white: #1e293b;
+    --bg-card: #1e293b;
+    --border-card: #334155;
+    --shadow-card: rgba(0, 0, 0, 0.4);
+    --bg-body: #0b0f19;
+    --nav-bg: rgba(15, 23, 42, 0.95);
+    --input-bg: #1e293b;
+    --input-border: #334155;
+    --primary-dark: #8cd3ff;
 }
 
 * {
@@ -19,8 +41,9 @@
 body {
     color: var(--text-dark);
     line-height: 1.6;
-    background-color: var(--white);
+    background-color: var(--bg-body);
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 html {
@@ -78,11 +101,12 @@ html {
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.95);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px var(--shadow-card);
     z-index: 1000;
     padding: 15px 0;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 .nav-container {
@@ -140,6 +164,27 @@ html {
 
 .btn-primary:hover {
     background: #d87c0d;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-light);
+    transform: scale(1.1) rotate(15deg);
 }
 
 /* Hamburger */
@@ -292,20 +337,20 @@ html {
 }
 
 .program-card {
-    background: var(--white);
+    background: var(--bg-card);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #eef2f5;
+    box-shadow: 0 10px 30px var(--shadow-card);
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.3s, border-color 0.3s;
+    border: 1px solid var(--border-card);
     display: flex;
     flex-direction: column;
     height: 100%;
+    transform-style: preserve-3d;
 }
 
 .program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px var(--shadow-card);
 }
 
 .card-image {
@@ -386,7 +431,8 @@ html {
 /* ===== SCHEDULE SECTION ===== */
 .schedule-section {
     padding: 100px 0;
-    background: var(--white);
+    background: var(--bg-body);
+    transition: background 0.3s;
 }
 
 .schedule-tabs {
@@ -398,7 +444,7 @@ html {
 }
 
 .schedule-tab-btn {
-    background: #f0f4f8;
+    background: var(--input-bg);
     color: var(--text-dark);
     border: none;
     padding: 12px 25px;
@@ -410,7 +456,7 @@ html {
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 10px var(--shadow-card);
 }
 
 .schedule-tab-btn i {
@@ -419,7 +465,7 @@ html {
 }
 
 .schedule-tab-btn:hover {
-    background: #e1e8f0;
+    background: var(--border-card);
     transform: translateY(-2px);
 }
 
@@ -453,12 +499,12 @@ html {
 }
 
 .schedule-grid-card {
-    background: var(--white);
-    border: 1px solid #eef2f5;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px var(--shadow-card);
+    transition: all 0.3s ease, background-color 0.3s, border-color 0.3s;
     position: relative;
     overflow: hidden;
 }
@@ -508,13 +554,14 @@ html {
 }
 
 .sgc-time-box {
-    background: #f8fbff;
-    border: 1px solid #eef6fc;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
     border-radius: 8px;
     padding: 12px 15px;
     display: flex;
     flex-direction: column;
     gap: 6px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .sgc-time-box .session {
@@ -635,18 +682,20 @@ html {
 .form-group input, .form-group select {
     width: 100%;
     padding: 15px 20px;
-    border: 2px solid #eef2f5;
+    border: 2px solid var(--input-border);
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
-    transition: border-color 0.3s;
-    background: #f8fbff;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    background: var(--input-bg);
+    color: var(--text-dark);
 }
 
 .form-group input:focus, .form-group select:focus {
     outline: none;
     border-color: var(--primary);
     background: var(--white);
+    color: var(--text-dark);
 }
 
 .btn-submit {
@@ -672,7 +721,8 @@ html {
 /* ===== ROADMAP SECTION ===== */
 .roadmap-section {
     padding: 100px 0;
-    background: #f8fbfe;
+    background: var(--bg-light);
+    transition: background 0.3s;
 }
 
 .roadmap-tabs {
@@ -684,7 +734,7 @@ html {
 }
 
 .roadmap-tab-btn {
-    background: #f0f4f8;
+    background: var(--input-bg);
     color: var(--text-dark);
     border: none;
     padding: 12px 25px;
@@ -696,7 +746,7 @@ html {
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 10px var(--shadow-card);
 }
 
 .roadmap-tab-btn i {
@@ -704,7 +754,7 @@ html {
 }
 
 .roadmap-tab-btn:hover {
-    background: #e1e8f0;
+    background: var(--border-card);
     transform: translateY(-2px);
 }
 
@@ -739,18 +789,18 @@ html {
 }
 
 .roadmap-card-item {
-    background: var(--white);
-    border: 1px solid #eef2f5;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
     border-radius: 16px;
     padding: 30px 25px 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+    box-shadow: 0 8px 25px var(--shadow-card);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s, border-color 0.3s;
 }
 
 .roadmap-card-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 35px var(--shadow-card);
 }
 
 .roadmap-card-item .step-num {
@@ -1008,17 +1058,17 @@ html {
 }
 
 .roadmap-col-item {
-    background: var(--white);
-    border: 1px solid #eef2f5;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px var(--shadow-card);
+    transition: all 0.3s ease, background-color 0.3s, border-color 0.3s;
 }
 
 .roadmap-col-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 35px var(--shadow-card);
 }
 
 .col-header {
@@ -1042,29 +1092,9 @@ html {
 .ch-2 { background: linear-gradient(135deg, var(--secondary), #d87c0d); }
 .ch-3 { background: linear-gradient(135deg, #6c5ce7, #8e44ad); }
 
-.ch-blue { background: linear-gradient(135deg, #00AEEF, #0082C8); }
-.ch-red { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-.ch-green { background: linear-gradient(135deg, #2ecc71, #27ae60); }
-
-.music-list li::before {
-    content: '\f001' !important;
-    font-family: 'Font Awesome 5 Free' !important;
-    font-weight: 900 !important;
-    font-size: 0.85rem !important;
-    top: 2px !important;
-}
-
-.roadmap-col-item:nth-child(1) .music-list li::before {
-    color: #0082C8 !important;
-}
-
-.roadmap-col-item:nth-child(2) .music-list li::before {
-    color: #e74c3c !important;
-}
-
-.roadmap-col-item:nth-child(3) .music-list li::before {
-    color: #27ae60 !important;
-}
+.music-ch-1 { background: linear-gradient(135deg, #0082C8, #00AEEF); } /* Blue */
+.music-ch-2 { background: linear-gradient(135deg, #ff4757, #ee5253); } /* Red */
+.music-ch-3 { background: linear-gradient(135deg, #2ed573, #26de81); } /* Green */
 
 .roadmap-col-item ul {
     padding: 25px;
@@ -1100,6 +1130,11 @@ html {
     border-radius: 16px;
     padding: 25px 30px;
     text-align: center;
+}
+
+.music-benefits {
+    background: #fff8f8;
+    border: 1px solid #ffe3e3;
 }
 
 .roadmap-footer-benefits h4 {
@@ -1143,12 +1178,12 @@ html {
 }
 
 .testimonial-card {
-    background: var(--white);
+    background: var(--bg-card);
     padding: 35px 30px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    border: 1px solid #eef2f5;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px var(--shadow-card);
+    border: 1px solid var(--border-card);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
     position: relative;
 }
 
@@ -1221,16 +1256,16 @@ html {
 }
 
 .faq-item {
-    border: 1px solid #eef2f5;
+    border: 1px solid var(--border-card);
     border-radius: 12px;
     margin-bottom: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    transition: box-shadow 0.3s;
+    box-shadow: 0 2px 10px var(--shadow-card);
+    transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 .faq-item:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px var(--shadow-card);
 }
 
 .faq-question {
@@ -1239,7 +1274,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--white);
+    background: var(--bg-card);
     border: none;
     cursor: pointer;
     font-size: 1.05rem;
@@ -1248,6 +1283,7 @@ html {
     font-family: inherit;
     text-align: left;
     gap: 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .faq-question i {
@@ -1308,11 +1344,11 @@ html {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: var(--white);
+        background: var(--bg-card);
         flex-direction: column;
         padding: 80px 30px 30px;
         box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-        transition: right 0.3s ease;
+        transition: right 0.3s ease, background-color 0.3s;
         align-items: flex-start;
     }
 
@@ -1324,6 +1360,12 @@ html {
         margin-left: 0;
         margin-bottom: 20px;
         font-size: 1.1rem;
+    }
+
+    .theme-toggle {
+        margin-left: 0;
+        margin-top: 15px;
+        align-self: flex-start;
     }
 
     .logo {
@@ -1456,4 +1498,48 @@ html {
     0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.5); }
     70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+}
+
+/* ===== DARK THEME STYLE OVERRIDES ===== */
+[data-theme="dark"] .roadmap-footer-benefits {
+    background: #1e293b;
+    border-color: #334155;
+}
+[data-theme="dark"] .benefits-row span {
+    color: var(--text-dark);
+}
+[data-theme="dark"] .music-benefits {
+    background: #2d1d28;
+    border-color: #4a283e;
+}
+[data-theme="dark"] .faq-item.active .faq-question {
+    background: #1e293b;
+}
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 100%);
+}
+[data-theme="dark"] .hero-image img {
+    border-color: var(--white);
+}
+[data-theme="dark"] .testimonials-section {
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 100%);
+}
+[data-theme="dark"] .step-age {
+    background: #0369a1;
+    color: #bae6fd;
+}
+[data-theme="dark"] .highlight-step {
+    background: #2a1b0c;
+}
+[data-theme="dark"] .highlight-card {
+    background: #2a1b0c;
+    border-color: #4a3014;
+}
+[data-theme="dark"] .roadmap-timeline::before {
+    background: var(--border-card);
+}
+
+/* Smooth transition for premium dark mode toggle */
+.navbar, .hero-section, .programs-section, .roadmap-section, .schedule-section, .testimonials-section, .faq-section, .program-card, .schedule-grid-card, .roadmap-card-item, .roadmap-col-item, .testimonial-card, .faq-item, .faq-question, .contact-form, input, select, textarea, button {
+    transition: background 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease-out;
 }
